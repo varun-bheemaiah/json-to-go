@@ -27,7 +27,7 @@ $(function()
 			return;
 		}
 
-		let output = jsonToGo(input, "", !$('#inline').is(':checked'), false, $('#omitempty').is(':checked'));
+		let output = jsonToGo(input, "", !$('#inline').is(':checked'), false, $('#omitempty').is(':checked'), $('#bson').is(':checked'));
 
 		if (output.error)
 		{
@@ -99,6 +99,12 @@ $(function()
 
 	// Also do conversion when omitempty preference changes
 	$('#omitempty').change(function()
+	{
+		doConversion();
+	});
+
+	// Also do conversion when bson preference changes
+	$('#bson').change(function()
 	{
 		doConversion();
 	});
