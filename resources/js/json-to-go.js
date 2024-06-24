@@ -178,7 +178,7 @@ function jsonToGo(
         if (allOmitempty || (omitempty && omitempty[keys[i]] === true)) {
           appender(",omitempty");
         }
-        if (bson) {
+        if (bson === true) {
           appender('" bson:"' + keyname);
         }
         if (allOmitempty || (omitempty && omitempty[keys[i]] === true)) {
@@ -204,11 +204,11 @@ function jsonToGo(
         if (allOmitempty || (omitempty && omitempty[keys[i]] === true)) {
           append(",omitempty");
         }
-        if (bson) {
-          appender('" bson:"' + keyname);
+        if (bson === true) {
+          append('" bson:"' + keyname);
         }
         if (allOmitempty || (omitempty && omitempty[keys[i]] === true)) {
-          appender(",omitempty");
+          append(",omitempty");
         }
         if (
           example &&
