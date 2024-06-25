@@ -180,9 +180,9 @@ function jsonToGo(
         }
         if (bson === true) {
           appender('" bson:"' + keyname);
-        }
-        if (allOmitempty || (omitempty && omitempty[keys[i]] === true)) {
-          appender(",omitempty");
+          if (allOmitempty || (omitempty && omitempty[keys[i]] === true)) {
+            appender(",omitempty");
+          }
         }
         appender('"`\n');
       }
@@ -206,9 +206,9 @@ function jsonToGo(
         }
         if (bson === true) {
           append('" bson:"' + keyname);
-        }
-        if (allOmitempty || (omitempty && omitempty[keys[i]] === true)) {
-          append(",omitempty");
+          if (allOmitempty || (omitempty && omitempty[keys[i]] === true)) {
+            append(",omitempty");
+          }
         }
         if (
           example &&
