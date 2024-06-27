@@ -39,6 +39,17 @@ $(function()
 		}
 	}
 
+	document.getElementById('input').addEventListener('paste', function (e) {
+		// Prevent the default paste behavior
+		e.preventDefault();
+
+		// Get the plain text from the clipboard
+		const text = e.clipboardData.getData('text/plain');
+
+		// Insert the plain text at the current cursor position
+		document.execCommand('insertText', false, text);
+	});
+
 	// Hides placeholder text
 	$('#input').on('focus', function()
 	{
